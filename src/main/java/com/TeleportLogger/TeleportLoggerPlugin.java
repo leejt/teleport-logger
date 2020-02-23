@@ -55,6 +55,12 @@ public class TeleportLoggerPlugin extends Plugin
 		clientToolbar.addNavigation(navButton);
 	}
 
+	@Override
+	protected void shutDown()
+	{
+		clientToolbar.removeNavigation(navButton);
+	}
+
 	@Subscribe
 	public void onGameTick(GameTick event) {
 		Player player = client.getLocalPlayer();
